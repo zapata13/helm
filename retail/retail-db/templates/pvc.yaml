@@ -1,0 +1,14 @@
+{{- if eq .Values.persistence.mode "persistent" -}}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ include "retail-db.name" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "retail-db.name" . }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.persistence.capacity }}
+{{- end }}

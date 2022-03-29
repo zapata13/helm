@@ -1,0 +1,13 @@
+name: retail-database
+replicas: 1
+image: quay.io/solution-pattern-cdc/retail-db:dc19e4a
+imagePullPolicy: IfNotPresent
+pgsqlUser: retail
+pgsqlPassword: retail
+pgsqlAdminPassword: password
+pgsqlDatabase: retail
+persistence:
+  mode: persistent
+  capacity: 5Gi
+serviceAccount:
+  name: default
