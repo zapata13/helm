@@ -1,0 +1,16 @@
+kafkaConnect: kafka-connect
+database:
+  hostname:
+  port: 5432
+  user:
+  password:
+  dbname: 
+  servername: retail
+schema:
+  includeList: public
+table:
+  includeList: public.customer,public.sale,public.line_item,public.product
+topic:
+  replicationFactor: 3
+  partitions: 5
+decimalHandlingMode: string
