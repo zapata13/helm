@@ -1,6 +1,6 @@
 name: retail-database
 replicas: 1
-image: quay.io/solution-pattern-cdc/retail-db:b5e1229
+image: quay.io/solution-pattern-cdc/retail-db:6e94c20
 imagePullPolicy: IfNotPresent
 pgsqlUser: retail
 pgsqlPassword: retail
