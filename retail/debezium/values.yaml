@@ -12,5 +12,5 @@ table:
   includeList: public.customer,public.sale,public.line_item,public.product
 topic:
   replicationFactor: 3
-  partitions: 5
+  partitions: 1
 decimalHandlingMode: string
