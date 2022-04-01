@@ -10,4 +10,4 @@ persistence:
   mode: persistent
   capacity: 5Gi
 serviceAccount:
-  name: default
+  create: true
