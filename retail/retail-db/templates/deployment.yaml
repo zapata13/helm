@@ -11,7 +11,8 @@ spec:
   selector:
     matchLabels:
       {{- include "retail-db.selectorLabels" . | nindent 6 }}
-  strategy: {}
+  strategy:
+    type: Recreate
   template:
     metadata:
       creationTimestamp: null
