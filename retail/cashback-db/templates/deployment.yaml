@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    {{- include "cashback-db.labels" . | nindent 4 }}
+    app.openshift.io/runtime: postgresql    
+  name: {{ include "cashback-db.name" . }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      {{- include "cashback-db.selectorLabels" . | nindent 6 }}
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        {{- include "cashback-db.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - image: {{ .Values.image }}
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          name: {{ include "cashback-db.name" . }}
+          ports:
+            - name: postgresql
+              containerPort: 5432
+              protocol: TCP
+          resources: {}
+          env:
+            - name: POSTGRESQL_USER
+              value: {{ .Values.pgsqlUser }}
+            - name: POSTGRESQL_PASSWORD
+              value: {{ .Values.pgsqlPassword }}
+            - name: POSTGRESQL_ADMIN_PASSWORD
+              value: {{ .Values.pgsqlAdminPassword }}
+            - name: POSTGRESQL_DATABASE
+              value: {{ .Values.pgsqlDatabase }}
+          {{- if eq .Values.persistence.mode "persistent" }}
+          volumeMounts:
+            - name: "{{ include "cashback-db.name" . }}-data"
+              mountPath: "/var/lib/pgsql/data"
+              volumes:
+          {{- end }}
+      {{- if eq .Values.persistence.mode "persistent" }}
+      volumes:
+        - name: "{{ include "cashback-db.name" . }}-data"
+          persistentVolumeClaim:
+            claimName: {{ include "cashback-db.name" . }}
+      {{- end }}
+      serviceAccountName: {{ include "cashback-db.serviceAccountName" . }}
+      serviceAccount: {{ include "cashback-db.serviceAccountName" . }}

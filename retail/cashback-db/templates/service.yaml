@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    {{- include "cashback-db.labels" . | nindent 4 }}
+  name: {{ include "cashback-db.name" . }}
+spec:
+  ports:
+    - name: postgresql
+      protocol: TCP
+      port: 5432
+      targetPort: 5432
+  selector:
+    {{- include "cashback-db.selectorLabels" . | nindent 4 }}

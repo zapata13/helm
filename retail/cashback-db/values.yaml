@@ -1,0 +1,13 @@
+name: cashback-db
+replicas: 1
+image: quay.io/solution-pattern-cdc/cashback-db:dd89e31
+imagePullPolicy: IfNotPresent
+pgsqlUser: retail
+pgsqlPassword: retail
+pgsqlAdminPassword: password
+pgsqlDatabase: cashback
+persistence:
+  mode: persistent
+  capacity: 5Gi
+serviceAccount:
+  create: true
