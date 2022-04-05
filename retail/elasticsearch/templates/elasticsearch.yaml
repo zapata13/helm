@@ -1,0 +1,34 @@
+apiVersion: elasticsearch.k8s.elastic.co/v1
+kind: Elasticsearch
+metadata:
+  name: {{ .Values.clusterName }}
+spec:
+  auth:
+    {{- toYaml .Values.auth | nindent 4 }}
+  http:
+    service:
+      {{- toYaml .Values.http.service | nindent 6 }}
+    tls:
+      {{- toYaml .Values.http.tls | nindent 6 }}
+  monitoring:
+    logs: {}
+    metrics: {}
+  nodeSets:
+    - config:
+        {{- toYaml .Values.nodeSets.config | nindent 8 }}
+      count: {{ .Values.nodeSets.count }}
+      name: {{ .Values.nodeSets.name }}
+      podTemplate:
+        metadata:
+          creationTimestamp: null
+        spec:
+          containers: null
+  transport:
+    service:
+      metadata: {}
+      spec: {}
+    tls:
+      certificate: {}
+  updateStrategy:
+    changeBudget: {}
+  version: {{ .Values.version }}

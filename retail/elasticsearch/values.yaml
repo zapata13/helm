@@ -1,0 +1,36 @@
+clusterName: retail
+version: 7.17.2
+
+auth: {}
+
+http:
+  service: {}
+  tls:
+    certificate: {}
+    selfSignedCertificate:
+      disabled: true  
+
+nodeSets:
+  name: default
+  count: 1
+  config:
+    node.store.allow_mmap: false
+
+index: 
+  name: products
+  config:
+    {
+      "mappings": {
+          "properties": {
+              "description": {
+                  "type": "text"
+              },
+              "name": {
+                  "type": "text"
+              }
+          }
+      }
+    }
+
+configJob:
+  name: es-config-job
