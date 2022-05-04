@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  retail-db:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-05-04T21:58:35.967861684+02:00"
+    description: A Helm chart for the retail database
+    digest: d9f87999d16688096d63f773d1d49558e6eab499dd4f68890a4ad6d115b3975c
+    name: retail-db
+    type: application
+    urls:
+    - https://solution-pattern-cdc.github.io/helm/charts/retail-db-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-05-04T21:58:35.96742948+02:00"
