@@ -3,7 +3,7 @@ entries:
   debezium:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-05T14:15:02.172753158+02:00"
+    created: "2022-05-05T18:10:58.732738443+02:00"
     description: A Helm chart for Debezium connector
     digest: 28638a5fb60b29a98e42ce9a3414ac90923a78143f8092b31ee46a71f4cb6898
     name: debezium
@@ -11,10 +11,21 @@ entries:
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/debezium-0.1.0.tgz
     version: 0.1.0
+  elasticsearch:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-05-05T18:10:58.733146085+02:00"
+    description: A Helm chart for ElasticSearch
+    digest: 4a1a996ca745be8c0845afffd73adac7f484e490e89d57c370a1159b603bff7d
+    name: elasticsearch
+    type: application
+    urls:
+    - https://solution-pattern-cdc.github.io/helm/charts/elasticsearch-0.1.0.tgz
+    version: 0.1.0
   kafka-connect:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-05T14:15:02.173156476+02:00"
+    created: "2022-05-05T18:10:58.733582098+02:00"
     description: A Helm chart for Kafka Connect
     digest: d3eaa5333e5b0c49ceb0630b19bcc3c70d18927fad68fe8dbb041e777d7e2c58
     name: kafka-connect
@@ -25,7 +36,7 @@ entries:
   retail-db:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-05T14:15:02.173433168+02:00"
+    created: "2022-05-05T18:10:58.733906762+02:00"
     description: A Helm chart for the retail database
     digest: d9f87999d16688096d63f773d1d49558e6eab499dd4f68890a4ad6d115b3975c
     name: retail-db
@@ -33,4 +44,4 @@ entries:
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/retail-db-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-05T14:15:02.172352039+02:00"
+generated: "2022-05-05T18:10:58.732173236+02:00"
