@@ -42,8 +42,8 @@ service:
 
 kafka:
   bootstrapServer: ""
-  securityProtocol: ""
-  saslMechanism: ""
+  securityProtocol: SASL_SSL
+  saslMechanism: PLAIN
   userId: ""
   password: ""
   streams:
