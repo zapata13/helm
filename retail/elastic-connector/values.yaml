@@ -1,6 +1,6 @@
 name: elastic-connector
 replicas: 1
-image: quay.io/solution-pattern-cdc/elastic-connector:5f14352
+image: quay.io/solution-pattern-cdc/elasticsearch-connector:5f14352
 imagePullPolicy: IfNotPresent
 
 ports:
