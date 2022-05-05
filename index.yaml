@@ -1,9 +1,20 @@
 apiVersion: v1
 entries:
+  kafka-connect:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-05-05T12:44:44.620639535+02:00"
+    description: A Helm chart for Kafka Connect
+    digest: d3eaa5333e5b0c49ceb0630b19bcc3c70d18927fad68fe8dbb041e777d7e2c58
+    name: kafka-connect
+    type: application
+    urls:
+    - https://solution-pattern-cdc.github.io/helm/charts/kafka-connect-0.1.0.tgz
+    version: 0.1.0
   retail-db:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-04T21:58:35.967861684+02:00"
+    created: "2022-05-05T12:44:44.620949+02:00"
     description: A Helm chart for the retail database
     digest: d9f87999d16688096d63f773d1d49558e6eab499dd4f68890a4ad6d115b3975c
     name: retail-db
@@ -11,4 +22,4 @@ entries:
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/retail-db-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-04T21:58:35.96742948+02:00"
+generated: "2022-05-05T12:44:44.620136669+02:00"
