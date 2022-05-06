@@ -3,7 +3,7 @@ entries:
   cashback-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-06T14:52:03.104317514+02:00"
+    created: "2022-05-06T16:09:08.667819511+02:00"
     description: A Helm chart for the kafka-to-cashbackdb connector
     digest: 2a5e4b487b7bc3176a5222f0ca747746762a384ac95aefe13b3230321ddbcebd
     name: cashback-connector
@@ -14,9 +14,9 @@ entries:
   cashback-db:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-06T14:52:03.10460734+02:00"
+    created: "2022-05-06T16:09:08.668304503+02:00"
     description: A Helm chart for the cashback database
-    digest: 5e451a6722921110fef2edea95d2114a170864c5c873380d690cc7b38cda8b75
+    digest: c13297830a3d2cc52e2b25b5b62f9420913002ac90a68a20ba0f1c14961512b8
     name: cashback-db
     type: application
     urls:
@@ -25,7 +25,7 @@ entries:
   debezium:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-06T14:52:03.104852369+02:00"
+    created: "2022-05-06T16:09:08.668702798+02:00"
     description: A Helm chart for Debezium connector
     digest: 28638a5fb60b29a98e42ce9a3414ac90923a78143f8092b31ee46a71f4cb6898
     name: debezium
@@ -36,7 +36,7 @@ entries:
   elastic-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-06T14:52:03.105260351+02:00"
+    created: "2022-05-06T16:09:08.669339733+02:00"
     description: A Helm chart for the kafka-to-elasticsearch connector
     digest: b569232e4ed9ebdeb90ddcd364d8b58908f89a8ba3fa3b0cc5a631bb25a9429c
     name: elastic-connector
@@ -47,7 +47,7 @@ entries:
   elasticsearch:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-06T14:52:03.105588011+02:00"
+    created: "2022-05-06T16:09:08.669839773+02:00"
     description: A Helm chart for ElasticSearch
     digest: 4a1a996ca745be8c0845afffd73adac7f484e490e89d57c370a1159b603bff7d
     name: elasticsearch
@@ -58,7 +58,7 @@ entries:
   kafka-connect:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-06T14:52:03.105968898+02:00"
+    created: "2022-05-06T16:09:08.670480464+02:00"
     description: A Helm chart for Kafka Connect
     digest: d3eaa5333e5b0c49ceb0630b19bcc3c70d18927fad68fe8dbb041e777d7e2c58
     name: kafka-connect
@@ -69,7 +69,7 @@ entries:
   retail-db:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-06T14:52:03.106303984+02:00"
+    created: "2022-05-06T16:09:08.670928329+02:00"
     description: A Helm chart for the retail database
     digest: d9f87999d16688096d63f773d1d49558e6eab499dd4f68890a4ad6d115b3975c
     name: retail-db
@@ -80,7 +80,7 @@ entries:
   sales-streams:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-06T14:52:03.106742258+02:00"
+    created: "2022-05-06T16:09:08.671688776+02:00"
     description: A Helm chart for the Kafka Streams application
     digest: 74126964b25bc26638ca7cbdc3bb8024b91ca8cc61095562173b256e76cee4e5
     name: sales-streams
@@ -88,4 +88,4 @@ entries:
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/sales-streams-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-06T14:52:03.103784276+02:00"
+generated: "2022-05-06T16:09:08.66693404+02:00"
