@@ -43,7 +43,8 @@ kafka:
   password: ""
   topics:
     customer: retail.updates.public.customer
-    sale: retail.sale-aggregated
+    saleAggregated: retail.sale-aggregated
+    expenseEvent: retail.expense-event
   consumerGroup: cashback-connector
 
 postgresql:
