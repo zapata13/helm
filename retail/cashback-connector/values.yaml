@@ -1,6 +1,6 @@
 name: cashback-connector
 replicas: 1
-image: quay.io/solution-pattern-cdc/cashback-connector:9013475
+image: quay.io/solution-pattern-cdc/cashback-connector:1f61b92
 imagePullPolicy: IfNotPresent
 
 ports:
