@@ -4,7 +4,7 @@ bootstrapServers:
 topicPrefix: retail
 keyConverter: org.apache.kafka.connect.json.JsonConverter
 valueConverter: org.apache.kafka.connect.json.JsonConverter
-replicationFactor: 3
+replicationFactor: 1
 authentication:
   deploySecret: true
   secret: kafka-service-account

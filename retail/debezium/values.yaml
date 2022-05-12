@@ -11,6 +11,6 @@ schema:
 table:
   includeList: public.customer,public.sale,public.line_item,public.product
 topic:
-  replicationFactor: 3
+  replicationFactor: 1
   partitions: 1
 decimalHandlingMode: string

@@ -48,7 +48,7 @@ kafka:
   password: ""
   streams:
     topics: retail.updates.public.sale,retail.updates.public.line_item,retail.sale-aggregated
-    replicationFactor: 3
+    replicationFactor: 1
     commitIntervalMs: 10000
     applicationId: retail
   topics:
