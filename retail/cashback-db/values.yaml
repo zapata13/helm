@@ -2,8 +2,8 @@ name: cashback-db
 replicas: 1
 image: quay.io/solution-pattern-cdc/cashback-db:1.0
 imagePullPolicy: IfNotPresent
-pgsqlUser: retail
-pgsqlPassword: retail
+pgsqlUser: cashback
+pgsqlPassword: cashback
 pgsqlAdminPassword: password
 pgsqlDatabase: cashback
 persistence:
