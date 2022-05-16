@@ -14,9 +14,9 @@ entries:
   cashback-db:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-06T16:09:08.668304503+02:00"
+    created: "2022-05-16T15:42:03.086402714+02:00"
     description: A Helm chart for the cashback database
-    digest: c13297830a3d2cc52e2b25b5b62f9420913002ac90a68a20ba0f1c14961512b8
+    digest: 41c6e9b0a01ec556972c9379dad98f8a7009db4e29c662dbed1473a03edb4fd0
     name: cashback-db
     type: application
     urls:
@@ -88,4 +88,4 @@ entries:
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/sales-streams-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-12T11:16:57.39371698+02:00"
+generated: "2022-05-16T15:42:03.078119461+02:00"
