@@ -30,13 +30,25 @@ spec:
           resources: {}
           env:
             - name: POSTGRESQL_USER
-              value: {{ .Values.pgsqlUser }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "retail-db.name" . }}
+                  key: database-user
             - name: POSTGRESQL_PASSWORD
-              value: {{ .Values.pgsqlPassword }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "retail-db.name" . }}
+                  key: database-password
             - name: POSTGRESQL_ADMIN_PASSWORD
-              value: {{ .Values.pgsqlAdminPassword }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "retail-db.name" . }}
+                  key: database-admin-password
             - name: POSTGRESQL_DATABASE
-              value: {{ .Values.pgsqlDatabase }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "retail-db.name" . }}
+                  key: database-name
           {{- if eq .Values.persistence.mode "persistent" }}
           volumeMounts:
             - name: "{{ include "retail-db.name" . }}-data"
