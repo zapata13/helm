@@ -3,9 +3,9 @@ entries:
   cashback-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-12T11:16:57.394275825+02:00"
+    created: "2022-05-19T20:31:37.488777132+02:00"
     description: A Helm chart for the kafka-to-cashbackdb connector
-    digest: 0104e2bc97e0e37b37310c82e283e478abf312e9aedf36f45ccb0bd1d09e3345
+    digest: c37d005dbab04536487c7cf4ab6b2b25dc9c6b124036a634f20fbca65e2ef38d
     name: cashback-connector
     type: application
     urls:
@@ -99,4 +99,4 @@ entries:
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/sales-streams-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-19T19:01:08.429350329+02:00"
+generated: "2022-05-19T20:31:37.487519741+02:00"
