@@ -1,6 +1,6 @@
 name: retail-simulation
 replicas: 1
-image: quay.io/solution-pattern-cdc/retail-simulation:1ba8b9c
+image: quay.io/solution-pattern-cdc/retail-simulation:50d86ed
 imagePullPolicy: IfNotPresent
 
 ports:
