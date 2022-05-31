@@ -54,4 +54,4 @@ postgresql:
   password: ""
   database: ""
 
-default_page_size: 15
+pageSize: 15

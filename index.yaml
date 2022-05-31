@@ -3,7 +3,7 @@ entries:
   cashback-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:28:53.16697-03:00"
+    created: "2022-05-31T20:33:22.172029-03:00"
     description: A Helm chart for the kafka-to-cashbackdb connector
     digest: c37d005dbab04536487c7cf4ab6b2b25dc9c6b124036a634f20fbca65e2ef38d
     name: cashback-connector
@@ -14,7 +14,7 @@ entries:
   cashback-db:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:28:53.16736-03:00"
+    created: "2022-05-31T20:33:22.172351-03:00"
     description: A Helm chart for the cashback database
     digest: 41c6e9b0a01ec556972c9379dad98f8a7009db4e29c662dbed1473a03edb4fd0
     name: cashback-db
@@ -25,7 +25,7 @@ entries:
   cashback-service:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:28:53.167847-03:00"
+    created: "2022-05-31T20:33:22.172753-03:00"
     description: A Helm chart for the cashback service
     digest: 0560fa09e98b5b255b1b20ee182abfd9e91af2bc475afa4f0f41e7ae744590ce
     name: cashback-service
@@ -36,9 +36,9 @@ entries:
   cashback-service-ui:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:28:53.168365-03:00"
+    created: "2022-05-31T20:33:22.173159-03:00"
     description: A Helm chart for the cashback service ui
-    digest: 18f99e5d7756845bb5afa677d94221bb2c5ca2fc1f6cd64ba3b55eb68bf3f41f
+    digest: cf37af4162c9acfffa70d72accbfa7910f1ac6bdfeb3528696d40a41bcead922
     name: cashback-service-ui
     type: application
     urls:
@@ -47,7 +47,7 @@ entries:
   debezium:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:28:53.168688-03:00"
+    created: "2022-05-31T20:33:22.173438-03:00"
     description: A Helm chart for Debezium connector
     digest: 36eff2c9f86fbba38a67ac3ea53e903016773265d57b00383841b3478f8d80fe
     name: debezium
@@ -58,7 +58,7 @@ entries:
   elastic-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:28:53.169124-03:00"
+    created: "2022-05-31T20:33:22.173803-03:00"
     description: A Helm chart for the kafka-to-elasticsearch connector
     digest: b569232e4ed9ebdeb90ddcd364d8b58908f89a8ba3fa3b0cc5a631bb25a9429c
     name: elastic-connector
@@ -69,7 +69,7 @@ entries:
   elasticsearch:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:28:53.170195-03:00"
+    created: "2022-05-31T20:33:22.174121-03:00"
     description: A Helm chart for ElasticSearch
     digest: 4a1a996ca745be8c0845afffd73adac7f484e490e89d57c370a1159b603bff7d
     name: elasticsearch
@@ -80,7 +80,7 @@ entries:
   kafka-connect:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:28:53.170631-03:00"
+    created: "2022-05-31T20:33:22.174493-03:00"
     description: A Helm chart for Kafka Connect
     digest: 4fcde6f1fba958c1f6c7d8500895119aad121d4db1c8e40e6cbbb365175317d9
     name: kafka-connect
@@ -91,7 +91,7 @@ entries:
   retail-db:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:28:53.170981-03:00"
+    created: "2022-05-31T20:33:22.174796-03:00"
     description: A Helm chart for the retail database
     digest: 458099a05d2ff262b1840882c7c9d2d5517bc724d5c00dfcf8be7bbe0d4ceea6
     name: retail-db
@@ -102,7 +102,7 @@ entries:
   retail-simulation:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:28:53.171409-03:00"
+    created: "2022-05-31T20:33:22.175198-03:00"
     description: A Helm chart for the retail simulation app
     digest: e2786f3df82e480aa48d69b890eee0c1b5916260c3ab27b762ce67d9c6faafde
     name: retail-simulation
@@ -113,7 +113,7 @@ entries:
   sales-streams:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:28:53.171839-03:00"
+    created: "2022-05-31T20:33:22.175626-03:00"
     description: A Helm chart for the Kafka Streams application
     digest: 27c1eadcbf4dd720ec34034d29e1c40f4bac451c4bbf5bcbedf9f8211aa011fa
     name: sales-streams
@@ -124,7 +124,7 @@ entries:
   search-service:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:28:53.172239-03:00"
+    created: "2022-05-31T20:33:22.175992-03:00"
     description: A Helm chart for the search service
     digest: 7da63892a5fac565bdc03bb5b7bba638b13280a5a0c764bb5e797b2ec1f909a5
     name: search-service
@@ -132,4 +132,4 @@ entries:
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/search-service-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-31T20:28:53.166321-03:00"
+generated: "2022-05-31T20:33:22.17144-03:00"
