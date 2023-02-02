@@ -4,6 +4,9 @@ version: 7.17.2
 auth:
   fileRealm:
     - secretName: elastic-user-secret
+  username: cashback
+  password: cashback
+  roles: superuser
 
 http:
   service: {}
