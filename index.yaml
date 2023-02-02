@@ -91,9 +91,9 @@ entries:
   retail-db:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:33:22.174796-03:00"
+    created: "2023-02-02T18:29:46.078821275+01:00"
     description: A Helm chart for the retail database
-    digest: 458099a05d2ff262b1840882c7c9d2d5517bc724d5c00dfcf8be7bbe0d4ceea6
+    digest: c1e37c4300befb6452625b3476e0b3684a7d04e9fa9a5a4600bd955cd04e498b
     name: retail-db
     type: application
     urls:
@@ -132,4 +132,4 @@ entries:
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/search-service-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-31T20:33:22.17144-03:00"
+generated: "2023-02-02T18:29:46.07616232+01:00"

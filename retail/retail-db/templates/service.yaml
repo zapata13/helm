@@ -3,12 +3,14 @@ kind: Service
 metadata:
   labels:
     {{- include "retail-db.labels" . | nindent 4 }}
-  name: {{ include "retail-db.name" . }}
+  name: {{ include "retail-db.fullname" . }}
+  annotations:
+    {{- include "retail-db.argocd-syncwave" . | nindent 4 }}
 spec:
   ports:
-    - name: postgresql
+    - name: postgres
       protocol: TCP
-      port: 5432
-      targetPort: 5432
+      port: {{ .Values.service.port }}
+      targetPort: postgres
   selector:
     {{- include "retail-db.selectorLabels" . | nindent 4 }}

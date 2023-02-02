@@ -2,9 +2,11 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ include "retail-db.name" . }}
+  name: {{ include "retail-db.fullname" . }}
   labels:
     {{- include "retail-db.labels" . | nindent 4 }}
+  annotations:
+    {{- include "retail-db.argocd-syncwave" . | nindent 4 }}
 spec:
   accessModes:
     - ReadWriteOnce

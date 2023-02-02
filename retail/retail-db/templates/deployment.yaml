@@ -5,9 +5,11 @@ metadata:
   labels:
     {{- include "retail-db.labels" . | nindent 4 }}
     app.openshift.io/runtime: postgresql    
-  name: {{ include "retail-db.name" . }}
+  name: {{ include "retail-db.fullname" . }}
+  annotations:
+    {{- include "retail-db.argocd-syncwave" . | nindent 4 }}
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       {{- include "retail-db.selectorLabels" . | nindent 6 }}
@@ -19,47 +21,55 @@ spec:
       labels:
         {{- include "retail-db.selectorLabels" . | nindent 8 }}
     spec:
+      serviceAccountName: {{ include "retail-db.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - image: {{ .Values.image }}
-          imagePullPolicy: {{ .Values.imagePullPolicy }}
-          name: {{ include "retail-db.name" . }}
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.imagePullPolicy }}
           ports:
-            - name: postgresql
-              containerPort: 5432
+            - name: postgres
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
-          resources: {}
           env:
             - name: POSTGRESQL_USER
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "retail-db.name" . }}
+                  name: {{ include "retail-db.fullname" . }}
                   key: database-user
             - name: POSTGRESQL_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "retail-db.name" . }}
+                  name: {{ include "retail-db.fullname" . }}
                   key: database-password
             - name: POSTGRESQL_ADMIN_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "retail-db.name" . }}
+                  name: {{ include "retail-db.fullname" . }}
                   key: database-admin-password
             - name: POSTGRESQL_DATABASE
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "retail-db.name" . }}
+                  name: {{ include "retail-db.fullname" . }}
                   key: database-name
           {{- if eq .Values.persistence.mode "persistent" }}
           volumeMounts:
-            - name: "{{ include "retail-db.name" . }}-data"
+            - name: "{{ include "retail-db.fullname" . }}-data"
               mountPath: "/var/lib/pgsql/data"
               volumes:
           {{- end }}
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
       {{- if eq .Values.persistence.mode "persistent" }}
       volumes:
-        - name: "{{ include "retail-db.name" . }}-data"
+        - name: "{{ include "retail-db.fullname" . }}-data"
           persistentVolumeClaim:
-            claimName: {{ include "retail-db.name" . }}
+            claimName: {{ include "retail-db.fullname" . }}
       {{- end }}
-      serviceAccountName: {{ include "retail-db.serviceAccountName" . }}
-      serviceAccount: {{ include "retail-db.serviceAccountName" . }}

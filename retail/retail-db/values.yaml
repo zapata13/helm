@@ -1,13 +1,58 @@
-name: retail-database
-replicas: 1
-image: quay.io/solution-pattern-cdc/retail-db:6845136
-imagePullPolicy: IfNotPresent
-pgsqlUser: retail
-pgsqlPassword: retail
-pgsqlAdminPassword: password
-pgsqlDatabase: retail
+fullnameOverride: retail-db
+
+replicaCount: 1
+
+image: 
+  repository: quay.io/solution-pattern-cdc/retail-db
+  imagePullPolicy: IfNotPresent
+  tag: "6845136"
+
+serviceAccount:
+  create: true
+
+podSecurityContext: {}
+
+securityContext:
+  allowPrivilegeEscalation: false
+  runAsNonRoot: true
+  seccompProfile:
+    type: RuntimeDefault
+  capabilities:
+    drop:
+      - ALL
+
+service:
+  type: ClusterIP
+  port: 5432
+
+resources: {}
+
+livenessProbe:
+  timeoutSeconds: 1
+  initialDelaySeconds: 5
+  tcpSocket:
+    port: 5432
+
+readinessProbe:
+  timeoutSeconds: 1
+  initialDelaySeconds: 5
+  exec:
+    command:
+    - "/bin/sh"
+    - "-i"
+    - "-c"
+    - psql -h 127.0.0.1 -U $POSTGRESQL_USER -q -d $POSTGRESQL_DATABASE -c 'SELECT 1'
+
+pgsql:
+  user: retail
+  password: retail
+  adminPassword: password
+  database: retail
+
 persistence:
   mode: persistent
   capacity: 5Gi
-serviceAccount:
-  create: true
+
+argocd:
+  enabled: false
+  syncwave: ""
