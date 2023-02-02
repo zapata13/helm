@@ -2,6 +2,10 @@ apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
   name: {{ .Values.clusterName }}
+  labels:
+    {{- include "elasticsearch.labels" . | nindent 4 }}
+  annotations:
+    {{- include "elasticsearch.argocd-syncwave" . | nindent 4 }}
 spec:
   auth:
     {{- toYaml .Values.auth | nindent 4 }}

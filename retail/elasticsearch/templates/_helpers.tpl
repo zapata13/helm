@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "cashback-connector.name" -}}
+{{- define "elasticsearch.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "cashback-connector.fullname" -}}
+{{- define "elasticsearch.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "cashback-connector.chart" -}}
+{{- define "elasticsearch.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "cashback-connector.labels" -}}
-helm.sh/chart: {{ include "cashback-connector.chart" . }}
-{{ include "cashback-connector.selectorLabels" . }}
+{{- define "elasticsearch.labels" -}}
+helm.sh/chart: {{ include "elasticsearch.chart" . }}
+{{ include "elasticsearch.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -46,18 +46,33 @@ app.kubernetes.io/part-of: retail-connectors
 {{/*
 Selector labels
 */}}
-{{- define "cashback-connector.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "cashback-connector.name" . }}
+{{- define "elasticsearch.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "elasticsearch.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "cashback-connector.serviceAccountName" -}}
+{{- define "elasticsearch.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "cashback-connector.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "elasticsearch.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
+{{- end }}
+{{- end }}
+
+{/*
+ArgoCD Syncwave
+*/}}
+{{- define "elasticsearch.argocd-syncwave" -}}
+{{- if .Values.argocd }}
+{{- if and (.Values.argocd.syncwave) (.Values.argocd.enabled) -}}
+argocd.argoproj.io/sync-wave: "{{ .Values.argocd.syncwave }}"
+{{- else }}
+{{- "{}" }}
+{{- end }}
+{{- else }}
+{{- "{}" }}
 {{- end }}
 {{- end }}

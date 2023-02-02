@@ -2,6 +2,10 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: {{ .Values.configJob.name }}
+  labels:
+    {{- include "elasticsearch.labels" . | nindent 4 }}
+  annotations:
+    {{- include "elasticsearch.argocd-syncwave" . | nindent 4 }}
 spec:
   parallelism: 1
   completions: 1

@@ -1,7 +1,9 @@
 clusterName: retail
 version: 7.17.2
 
-auth: {}
+auth:
+  fileRealm:
+    - secretName: elastic-user-secret
 
 http:
   service: {}
@@ -20,6 +22,12 @@ index:
   name: products
   config:
     {
+      "settings": {
+        "index": {
+          "number_of_shards": 1,
+          "number_of_replicas": 0
+        }
+      },
       "mappings": {
           "properties": {
               "description": {
@@ -34,3 +42,7 @@ index:
 
 configJob:
   name: es-config-job
+
+argocd:
+  enabled: false
+  syncwave: ""
