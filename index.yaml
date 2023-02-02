@@ -69,9 +69,9 @@ entries:
   elasticsearch:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-02-02T21:08:55.195384351+01:00"
+    created: "2023-02-02T21:33:50.755081+01:00"
     description: A Helm chart for ElasticSearch
-    digest: 701c930875cced4be5ed505c05c9df00a5b92473220ba596f4c940bed83f163d
+    digest: df1e6e04852e7166851c33cf75bcd47749737b79771b62af5c68bd75030acf2c
     name: elasticsearch
     type: application
     urls:
@@ -132,4 +132,4 @@ entries:
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/search-service-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-02T21:16:31.592091754+01:00"
+generated: "2023-02-02T21:33:50.752320069+01:00"
