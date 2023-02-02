@@ -1,4 +1,4 @@
-version: 3.0.0
+version: 3.3.1
 replicas: 1
 bootstrapServers: 
 topicPrefix: retail
@@ -6,12 +6,13 @@ keyConverter: org.apache.kafka.connect.json.JsonConverter
 valueConverter: org.apache.kafka.connect.json.JsonConverter
 replicationFactor: 1
 authentication:
-  deploySecret: true
+  enabled: true
   secret: kafka-service-account
   passwordKey: client-secret
   username:
   password:
   type: plain
+tls: true
 resources:
   requests:
     cpu: 100m
@@ -33,5 +34,9 @@ build:
     - name: debezium-postgres-connector
       artifacts:
         - type: tgz
-          url: https://repo1.maven.org/maven2/io/debezium/debezium-connector-postgres/1.7.0.Final/debezium-connector-postgres-1.7.0.Final-plugin.tar.gz
-          sha512sum: 8aeeab767e9085b8fc034273c08ac6dc501b96ebb970634e45bdd81e51c6dd66b1b02a481990a6196cb6b89fe9f52b823bda7b74d3994f72bb3d9b9d507ab2b5    
+          url: https://repo1.maven.org/maven2/io/debezium/debezium-connector-postgres/1.9.7.Final/debezium-connector-postgres-1.9.7.Final-plugin.tar.gz
+          sha512sum: 088a92a7456101d7f01e356250439728e2018355d11797f20b8520d58ba6ce4400f917263223386b031c000d21010e1387970707bd7e8f92a681ac3c88ccc38b
+
+argocd:
+  enabled: false
+  syncwave: ""

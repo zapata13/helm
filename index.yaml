@@ -80,9 +80,9 @@ entries:
   kafka-connect:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:33:22.174493-03:00"
+    created: "2023-02-02T20:33:23.14669938+01:00"
     description: A Helm chart for Kafka Connect
-    digest: 4fcde6f1fba958c1f6c7d8500895119aad121d4db1c8e40e6cbbb365175317d9
+    digest: 7eea53737f0cf559755956d718dceb247aff7dfcd8dc8b1d55c8b2ff22518995
     name: kafka-connect
     type: application
     urls:
@@ -132,4 +132,4 @@ entries:
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/search-service-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-02T19:30:28.5056016+01:00"
+generated: "2023-02-02T20:33:23.143589967+01:00"
