@@ -1,12 +1,28 @@
-name: elastic-connector
-replicas: 1
-image: quay.io/solution-pattern-cdc/elasticsearch-connector:5f14352
-imagePullPolicy: IfNotPresent
+fullnameOverride: elastic-connector
 
-ports:
-  http:
-    name: http
-    port: 8080
+replicaCount: 1
+image: 
+  repository: quay.io/solution-pattern-cdc/elasticsearch-connector
+  imagePullPolicy: IfNotPresent
+  tag: "718f693"
+
+serviceAccount:
+  create: true
+
+podSecurityContext: {}
+
+securityContext:
+  allowPrivilegeEscalation: false
+  runAsNonRoot: true
+  seccompProfile:
+    type: RuntimeDefault
+  capabilities:
+    drop:
+      - ALL
+
+service:
+  type: ClusterIP
+  port: 8080
 
 resources: {}
 
@@ -25,9 +41,6 @@ readinessProbe:
   initialDelaySeconds: 10
   periodSeconds: 10
   timeoutSeconds: 3
-
-serviceAccount:
-  create: true
 
 kafka:
   bootstrapServer: ""

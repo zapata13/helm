@@ -5,9 +5,9 @@ metadata:
   labels:
     {{- include "elastic-connector.labels" . | nindent 4 }}
     app.openshift.io/runtime: camel    
-  name: {{ include "elastic-connector.name" . }}
+  name: {{ include "elastic-connector.fullname" . }}
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       {{- include "elastic-connector.selectorLabels" . | nindent 6 }}
@@ -18,13 +18,18 @@ spec:
       labels:
         {{- include "elastic-connector.selectorLabels" . | nindent 8 }}
     spec:
+      serviceAccountName: {{ include "elastic-connector.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - image: {{ .Values.image }}
-          imagePullPolicy: {{ .Values.imagePullPolicy }}
-          name: {{ include "elastic-connector.name" . }}
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.imagePullPolicy }}
           ports:
-            - name: {{ .Values.ports.http.name }}
-              containerPort: {{ .Values.ports.http.port }}
+            - name: http
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
@@ -35,9 +40,7 @@ spec:
           volumeMounts:
             - mountPath: /deployments/config
               name: config
-      serviceAccountName: {{ include "elastic-connector.serviceAccountName" . }}
-      serviceAccount: {{ include "elastic-connector.serviceAccountName" . }}
       volumes:
         - name: config
           secret:
-            secretName: {{ include "elastic-connector.name" . }}
+            secretName: {{ include "elastic-connector.fullname" . }}
