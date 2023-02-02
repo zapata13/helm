@@ -2,9 +2,11 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ include "cashback-db.name" . }}
+  name: {{ include "cashback-db.fullname" . }}
   labels:
     {{- include "cashback-db.labels" . | nindent 4 }}
+  annotations:
+    {{- include "cashback-db.argocd-syncwave" . | nindent 4 }}
 spec:
   accessModes:
     - ReadWriteOnce

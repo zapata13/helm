@@ -3,12 +3,15 @@ kind: Service
 metadata:
   labels:
     {{- include "cashback-db.labels" . | nindent 4 }}
-  name: {{ include "cashback-db.name" . }}
+  name: {{ include "cashback-db.fullname" . }}
+  annotations:
+    {{- include "cashback-db.argocd-syncwave" . | nindent 4 }}
 spec:
+  type: {{ .Values.service.type }}
   ports:
-    - name: postgresql
+    - name: postgres
       protocol: TCP
-      port: 5432
-      targetPort: 5432
+      port: {{ .Values.service.port }}
+      targetPort: postgres
   selector:
     {{- include "cashback-db.selectorLabels" . | nindent 4 }}
