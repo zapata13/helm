@@ -5,9 +5,9 @@ metadata:
   labels:
     {{- include "cashback-service-ui.labels" . | nindent 4 }}
     app.openshift.io/runtime: quarkus
-  name: {{ include "cashback-service-ui.name" . }}
+  name: {{ include "cashback-service-ui.fullname" . }}
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       {{- include "cashback-service-ui.selectorLabels" . | nindent 6 }}
@@ -18,13 +18,18 @@ spec:
       labels:
         {{- include "cashback-service-ui.selectorLabels" . | nindent 8 }}
     spec:
+      serviceAccountName: {{ include "cashback-service-ui.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - image: {{ .Values.image }}
-          imagePullPolicy: {{ .Values.imagePullPolicy }}
-          name: {{ include "cashback-service-ui.name" . }}
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.imagePullPolicy }}
           ports:
-            - name: {{ .Values.ports.http.name }}
-              containerPort: {{ .Values.ports.http.port }}
+            - name: http
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
@@ -35,9 +40,7 @@ spec:
           volumeMounts:
             - mountPath: /deployments/config
               name: config
-      serviceAccountName: {{ include "cashback-service-ui.serviceAccountName" . }}
-      serviceAccount: {{ include "cashback-service-ui.serviceAccountName" . }}
       volumes:
         - name: config
           secret:
-            secretName: {{ include "cashback-service-ui.name" . }}
+            secretName: {{ include "cashback-service-ui.fullname" . }}

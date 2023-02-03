@@ -36,9 +36,9 @@ entries:
   cashback-service-ui:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:33:22.173159-03:00"
+    created: "2023-02-03T16:59:09.933767932+01:00"
     description: A Helm chart for the cashback service ui
-    digest: cf37af4162c9acfffa70d72accbfa7910f1ac6bdfeb3528696d40a41bcead922
+    digest: 4f43de1d41ff65b1ad57ab24c134556fddc652395fd709b2ca1151e4ac07ecf3
     name: cashback-service-ui
     type: application
     urls:
@@ -132,4 +132,4 @@ entries:
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/search-service-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-03T16:39:12.016471267+01:00"
+generated: "2023-02-03T16:59:09.932040532+01:00"
