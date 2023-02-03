@@ -1,12 +1,29 @@
-name: sales-streams
-replicas: 1
-image: quay.io/solution-pattern-cdc/sales-streams:3922064
-imagePullPolicy: IfNotPresent
+fullnameOverride: sales-streams
 
-ports:
-  http:
-    name: http
-    port: 8080
+replicaCount: 1
+
+image: 
+  repository: quay.io/solution-pattern-cdc/sales-streams
+  imagePullPolicy: IfNotPresent
+  tag: "facb2c4"
+
+serviceAccount:
+  create: true
+
+podSecurityContext: {}
+
+securityContext:
+  allowPrivilegeEscalation: false
+  runAsNonRoot: true
+  seccompProfile:
+    type: RuntimeDefault
+  capabilities:
+    drop:
+      - ALL
+
+service:
+  type: ClusterIP
+  port: 8080
 
 resources: 
   limits:
@@ -31,14 +48,6 @@ readinessProbe:
   initialDelaySeconds: 10
   periodSeconds: 10
   timeoutSeconds: 3
-
-serviceAccount:
-  create: true
-
-service:
-  type: ClusterIP
-  port: 8080
-  portName: http
 
 kafka:
   bootstrapServer: ""
