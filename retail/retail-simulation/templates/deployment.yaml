@@ -4,10 +4,10 @@ metadata:
   creationTimestamp: null
   labels:
     {{- include "retail-simulation.labels" . | nindent 4 }}
-    app.openshift.io/runtime: camel    
-  name: {{ include "retail-simulation.name" . }}
+    app.openshift.io/runtime: quarkus   
+  name: {{ include "retail-simulation.fullname" . }}
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       {{- include "retail-simulation.selectorLabels" . | nindent 6 }}
@@ -18,13 +18,18 @@ spec:
       labels:
         {{- include "retail-simulation.selectorLabels" . | nindent 8 }}
     spec:
+      serviceAccountName: {{ include "retail-simulation.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - image: {{ .Values.image }}
-          imagePullPolicy: {{ .Values.imagePullPolicy }}
-          name: {{ include "retail-simulation.name" . }}
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.imagePullPolicy }}
           ports:
-            - name: {{ .Values.ports.http.name }}
-              containerPort: {{ .Values.ports.http.port }}
+            - name: http
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
@@ -35,9 +40,7 @@ spec:
           volumeMounts:
             - mountPath: /deployments/config
               name: config
-      serviceAccountName: {{ include "retail-simulation.serviceAccountName" . }}
-      serviceAccount: {{ include "retail-simulation.serviceAccountName" . }}
       volumes:
         - name: config
           secret:
-            secretName: {{ include "retail-simulation.name" . }}
+            secretName: {{ include "retail-simulation.fullname" . }}

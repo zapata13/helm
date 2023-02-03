@@ -102,9 +102,9 @@ entries:
   retail-simulation:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-02-03T19:51:44.88883133+01:00"
+    created: "2023-02-03T20:04:53.813209066+01:00"
     description: A Helm chart for the retail simulation app
-    digest: e2786f3df82e480aa48d69b890eee0c1b5916260c3ab27b762ce67d9c6faafde
+    digest: 05b7fce09341c312474e5483539092679f4d2e3416b0ae94745a7a1609cd2711
     name: retail-simulation
     type: application
     urls:
@@ -132,4 +132,4 @@ entries:
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/search-service-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-03T19:51:44.885530287+01:00"
+generated: "2023-02-03T20:04:53.80940411+01:00"
