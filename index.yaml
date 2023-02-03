@@ -3,9 +3,9 @@ entries:
   cashback-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-05-31T20:33:22.172029-03:00"
+    created: "2023-02-03T16:08:41.462506109+01:00"
     description: A Helm chart for the kafka-to-cashbackdb connector
-    digest: c37d005dbab04536487c7cf4ab6b2b25dc9c6b124036a634f20fbca65e2ef38d
+    digest: 87124af3918608650afd66171ce244ead68b44db4df5d80080a998f1b31383e6
     name: cashback-connector
     type: application
     urls:
@@ -132,4 +132,4 @@ entries:
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/search-service-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-03T15:19:45.211291066+01:00"
+generated: "2023-02-03T16:08:41.462013777+01:00"
