@@ -43,9 +43,9 @@ readinessProbe:
   timeoutSeconds: 3
 
 kafka:
-  bootstrapServer: ""
-  securityProtocol: SASL_SSL
-  saslMechanism: PLAIN
+  bootstrapServer: kafka-kafka-bootstrap:9092
+  securityProtocol: ""
+  saslMechanism: ""
   userId: ""
   password: ""
   topics:
@@ -53,8 +53,8 @@ kafka:
   consumerGroup: elastic-connector
 
 elasticsearch:
-  hosts: 
-  username:
-  password:
+  hosts: retail-es-http:9200
+  username: cashback
+  password: cashback
   protocol: http
   index: products
