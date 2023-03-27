@@ -50,4 +50,4 @@ configJob:
 
 argocd:
   enabled: false
-  syncwave: ""
+  syncwave: "-2"
