@@ -58,9 +58,9 @@ route:
     insecureEdgeTerminationPolicy: Redirect
 
 postgresql:
-  host: ""
-  username: ""
-  password: ""
-  database: ""
+  host: cashback-db
+  username: cashback
+  password: cashback
+  database: cashback
 
 pageSize: 15
