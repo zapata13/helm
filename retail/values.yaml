@@ -1,0 +1,26 @@
+---
+argocd: &argo
+  enabled: false
+
+elasticsearch:
+  enabled: true
+  argocd: *argo
+
+cashback-db:
+  argocd: *argo
+
+kafka-broker:
+  argocd: *argo
+
+kafka-connect:
+  argocd: *argo
+
+kafka-topics:
+  argocd: *argo
+
+retail-db:
+  argocd: *argo
+
+debezium:
+  enabled: true
+

@@ -1,0 +1,56 @@
+apiVersion: v2
+name: solution-pattern-cdc
+description: A Helm chart for Kubernetes
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: retail-db
+    version: 0.1.0
+    repository: file://retail-db
+  - name: kafka-broker
+    version: 0.1.0
+    repository: file://kafka-broker
+  - name: kafka-connect
+    version: 0.1.0
+    repository: file://kafka-connect
+  - name: kafka-topics
+    version: 0.1.0
+    repository: file://kafka-topics
+  - name: debezium
+    version: 0.1.0
+    repository: file://debezium
+    condition: debezium.enabled
+  - name: kafdrop
+    version: 0.1.0
+    repository: file://kafdrop
+  - name: cashback-db
+    version: 0.1.0
+    repository: file://cashback-db
+  - name: elasticsearch
+    version: 0.1.0
+    repository: file://elasticsearch
+    condition: elasticsearch.enabled
+  - name: sales-streams
+    version: 0.1.0
+    repository: file://sales-streams
+  - name: cashback-connector
+    version: 0.1.0
+    repository: file://cashback-connector
+  - name: cashback-service
+    version: 0.1.0
+    repository: file://cashback-service
+  - name: cashback-service-ui
+    version: 0.1.0
+    repository: file://cashback-service-ui
+  - name: elastic-connector
+    version: 0.1.0
+    repository: file://elastic-connector
+    condition: elasticsearch.enabled
+  - name: search-service
+    version: 0.1.0
+    repository: file://search-service
+    condition: elasticsearch.enabled
+  - name: retail-simulation
+    version: 0.1.0
+    repository: file://retail-simulation
