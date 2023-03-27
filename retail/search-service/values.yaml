@@ -52,8 +52,9 @@ route:
     insecureEdgeTerminationPolicy: Redirect
 
 elasticsearch:
-  hosts: 
-  username: 
-  password: 
+  hosts: retail-es-http:9200
+  clusterName: retail
+  username: cashback
+  password: cashback
   protocol: http
   index: products

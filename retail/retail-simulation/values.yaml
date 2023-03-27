@@ -58,7 +58,7 @@ route:
     insecureEdgeTerminationPolicy: Redirect
 
 postgresql:
-  host: ""
-  username: ""
-  password: ""
-  database: ""
+  host: retail-db
+  username: retail
+  password: retail
+  database: retail

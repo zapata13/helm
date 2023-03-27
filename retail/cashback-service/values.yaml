@@ -50,9 +50,9 @@ readinessProbe:
   timeoutSeconds: 3
 
 kafka:
-  bootstrapServer: ""
-  securityProtocol: SASL_SSL
-  saslMechanism: PLAIN
+  bootstrapServer: kafka-kafka-bootstrap:9092
+  securityProtocol: ""
+  saslMechanism: ""
   userId: ""
   password: ""
   topics:
@@ -60,7 +60,7 @@ kafka:
   consumerGroup: cashback-service
 
 postgresql:
-  host: ""
-  username: ""
-  password: ""
-  database: ""
+  host: cashback-db
+  username: cashback
+  password: cashback
+  database: cashback
