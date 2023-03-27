@@ -50,14 +50,14 @@ readinessProbe:
   timeoutSeconds: 3
 
 kafka:
-  bootstrapServer: ""
-  securityProtocol: SASL_SSL
-  saslMechanism: PLAIN
+  bootstrapServer: kafka-kafka-bootstrap:9092
+  securityProtocol: ""
+  saslMechanism: ""
   userId: ""
   password: ""
   streams:
     topics: retail.updates.public.sale,retail.updates.public.line_item,retail.sale-aggregated
-    replicationFactor: 1
+    replicationFactor: 2
     commitIntervalMs: 10000
     applicationId: retail
   topics:
