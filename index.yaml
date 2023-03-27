@@ -2,10 +2,9 @@ apiVersion: v1
 entries:
   cashback-connector:
   - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-02-03T19:51:44.886024207+01:00"
+    created: "2023-03-27T20:48:04.75725972+02:00"
     description: A Helm chart for the kafka-to-cashbackdb connector
-    digest: 87124af3918608650afd66171ce244ead68b44db4df5d80080a998f1b31383e6
+    digest: a0abc4fd79b03929a9ea0947d4f54babe8f4a51cc4531e536a523bb68c29abcd
     name: cashback-connector
     type: application
     urls:
@@ -13,10 +12,9 @@ entries:
     version: 0.1.0
   cashback-db:
   - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-02-03T19:51:44.88638654+01:00"
+    created: "2023-03-27T20:48:04.757589676+02:00"
     description: A Helm chart for the cashback database
-    digest: a47ae159aee4be7c8afd8e2783a8f28070d5275a48cf8d288435faf417f528ea
+    digest: b13a2f5ebd3eec8f06a1f3449422883fd3368b9a08a719eb726c7cea2daa25b0
     name: cashback-db
     type: application
     urls:
@@ -24,10 +22,9 @@ entries:
     version: 0.1.0
   cashback-service:
   - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-02-22T20:42:11.707704754+01:00"
+    created: "2023-03-27T20:48:04.75792178+02:00"
     description: A Helm chart for the cashback service
-    digest: 77bdc1c4b73bfefde5a5fa6fda48545a76f11c7c71002fa436baf1178ac17b56
+    digest: e131e2a2955df1edfe4e5bd55e63f3a118508670061d57c2a6ed54dfe897979e
     name: cashback-service
     type: application
     urls:
@@ -35,10 +32,9 @@ entries:
     version: 0.1.0
   cashback-service-ui:
   - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-02-03T19:51:44.887066946+01:00"
+    created: "2023-03-27T20:48:04.758277085+02:00"
     description: A Helm chart for the cashback service ui
-    digest: 4f43de1d41ff65b1ad57ab24c134556fddc652395fd709b2ca1151e4ac07ecf3
+    digest: 4d31acdf241fe41513fa5dff31927daca33874244129c1138caa35734ee9664d
     name: cashback-service-ui
     type: application
     urls:
@@ -46,10 +42,9 @@ entries:
     version: 0.1.0
   debezium:
   - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-02-03T19:51:44.88725748+01:00"
+    created: "2023-03-27T20:48:04.75845526+02:00"
     description: A Helm chart for Debezium connector
-    digest: 36eff2c9f86fbba38a67ac3ea53e903016773265d57b00383841b3478f8d80fe
+    digest: 65fa8886c79fcefd10652189ebfeebbd3fc19eaf7b10265c6b2496acb69db754
     name: debezium
     type: application
     urls:
@@ -57,10 +52,9 @@ entries:
     version: 0.1.0
   elastic-connector:
   - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-02-03T19:51:44.887586999+01:00"
+    created: "2023-03-27T20:48:04.75878384+02:00"
     description: A Helm chart for the kafka-to-elasticsearch connector
-    digest: def853a9a6a541c60cb994ac5b9070bff99d305b6ec266ff2892b5a451a4e50b
+    digest: a1becbface51bae6daa2a5efc889679726c85f87ee148be4c1380ed4ba78fff3
     name: elastic-connector
     type: application
     urls:
@@ -68,32 +62,59 @@ entries:
     version: 0.1.0
   elasticsearch:
   - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-02-03T19:51:44.887885824+01:00"
+    created: "2023-03-27T20:48:04.759089162+02:00"
     description: A Helm chart for ElasticSearch
-    digest: df1e6e04852e7166851c33cf75bcd47749737b79771b62af5c68bd75030acf2c
+    digest: 3aa6e579a2225ede56e0a76a7a6e1882f8b2afff96e947883a847a902ffcdbd3
     name: elasticsearch
     type: application
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/elasticsearch-0.1.0.tgz
     version: 0.1.0
+  kafdrop:
+  - apiVersion: v2
+    created: "2023-03-27T20:48:04.759457722+02:00"
+    description: A Helm chart for Kafdrop
+    digest: 124163eb2202b2e7c611dcbee503b06ffca37e80e9bf2b08f7c5cb99acef27e4
+    name: kafdrop
+    type: application
+    urls:
+    - https://solution-pattern-cdc.github.io/helm/charts/kafdrop-0.1.0.tgz
+    version: 0.1.0
+  kafka-broker:
+  - apiVersion: v2
+    created: "2023-03-27T20:48:04.7596743+02:00"
+    description: A Helm chart for AMQ Streams broker
+    digest: d58b83da3f297dbff627b190caac89efaf66125bf226e681d7a35fb5f53c836d
+    name: kafka-broker
+    type: application
+    urls:
+    - https://solution-pattern-cdc.github.io/helm/charts/kafka-broker-0.1.0.tgz
+    version: 0.1.0
   kafka-connect:
   - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-02-03T19:51:44.888203419+01:00"
+    created: "2023-03-27T20:48:04.759998899+02:00"
     description: A Helm chart for Kafka Connect
-    digest: 7eea53737f0cf559755956d718dceb247aff7dfcd8dc8b1d55c8b2ff22518995
+    digest: 1d0d578562bc2f6ff215f975b51bcad80902582fe44c8f8fec1bb5ec03c25bb0
     name: kafka-connect
     type: application
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/kafka-connect-0.1.0.tgz
     version: 0.1.0
+  kafka-topics:
+  - apiVersion: v2
+    created: "2023-03-27T20:48:04.760241725+02:00"
+    description: A Helm chart for AMQ Streams topics
+    digest: 1535887bcb90b7d18b55af07d806908f2f7bdc83302aa32d4170727454e67441
+    name: kafka-topics
+    type: application
+    urls:
+    - https://solution-pattern-cdc.github.io/helm/charts/kafka-topics-0.1.0.tgz
+    version: 0.1.0
   retail-db:
   - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-02-03T19:51:44.888525965+01:00"
+    created: "2023-03-27T20:48:04.761125213+02:00"
     description: A Helm chart for the retail database
-    digest: c1e37c4300befb6452625b3476e0b3684a7d04e9fa9a5a4600bd955cd04e498b
+    digest: c3516428f0d6127346764a034f366c9abc4f316df1dab7e48169b8cbf53385de
     name: retail-db
     type: application
     urls:
@@ -101,10 +122,9 @@ entries:
     version: 0.1.0
   retail-simulation:
   - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-02-03T20:04:53.813209066+01:00"
+    created: "2023-03-27T20:48:04.761644084+02:00"
     description: A Helm chart for the retail simulation app
-    digest: 05b7fce09341c312474e5483539092679f4d2e3416b0ae94745a7a1609cd2711
+    digest: 0a4e8e8c93bec093247977546cc1d99634c07f5bbb1d96c0feb69deaadaab724
     name: retail-simulation
     type: application
     urls:
@@ -112,10 +132,9 @@ entries:
     version: 0.1.0
   sales-streams:
   - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-02-03T19:51:44.88918063+01:00"
+    created: "2023-03-27T20:48:04.762019366+02:00"
     description: A Helm chart for the Kafka Streams application
-    digest: 623320c5472cd37da36a1739119d057cc3a3c54f63e5ed4195401a2a641d444a
+    digest: e5af38efd0b65d38e60402e2a5451d5eaa0454225aa9ff1d0ebbd28a1e304543
     name: sales-streams
     type: application
     urls:
@@ -123,13 +142,12 @@ entries:
     version: 0.1.0
   search-service:
   - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-02-03T19:51:44.889512825+01:00"
+    created: "2023-03-27T20:48:04.762354965+02:00"
     description: A Helm chart for the search service
-    digest: 07bf0a355dff2357d32d893b1ce4bb4595a4c382d4994eee7010065d42758159
+    digest: 09f02346c8be91d85249975062de72253a096894e386f5ef754fc1a9549c3f67
     name: search-service
     type: application
     urls:
     - https://solution-pattern-cdc.github.io/helm/charts/search-service-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-22T20:42:11.705953581+01:00"
+generated: "2023-03-27T20:48:04.756746271+02:00"
