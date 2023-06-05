@@ -1,7 +1,7 @@
 nameOverride: "kafka"
 
 kafka:
-  version: 3.2.3
+  version: 3.3.1
   cluster:
     replicas: 2
   zookeeper:
@@ -13,7 +13,7 @@ kafka:
     transactionStateLogReplicationFactor: 2
     transactionStateLogMinIsr: 2
     minInsyncReplicas: 1
-    interBrokerProtocolVersion: '3.2' 
+    interBrokerProtocolVersion: '3.3' 
 
 argocd:
   enabled: false
